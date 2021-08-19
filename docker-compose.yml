@@ -1,0 +1,14 @@
+version: "3"
+services:
+  database:
+    image: mariadb:10.6
+    environment:
+      - MARIADB_DATABASE=tagulog
+      - MARIADB_USER=yama
+      - MARIADB_PASSWORD=hogehoge
+      - MARIADB_ROOT_PASSWORD=hogehoge893
+    ports:
+      - 3306:3306
+    volumes:
+      - ./docker/mariadb/:/docker-entrypoint-initdb.d
+
