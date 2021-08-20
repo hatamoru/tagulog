@@ -1,1 +1,6 @@
 # tagulog
+## Controller  
+
+## Service
+
+## Repository
