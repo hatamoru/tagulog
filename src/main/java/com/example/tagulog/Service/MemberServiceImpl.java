@@ -3,13 +3,13 @@ package com.example.tagulog.Service;
 import com.example.tagulog.model.Member;
 import com.example.tagulog.repository.MemberMapper;
 import lombok.AllArgsConstructor;
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import javax.naming.NoPermissionException;
-import java.nio.channels.AcceptPendingException;
+
 
 @Service
 @AllArgsConstructor
@@ -57,15 +57,25 @@ public class MemberServiceImpl implements MemberService
     public void delete(Member member)
     {
         //登録済みのアドレスの存在確認
+        String userEmail = member.getEmail();
         //mapper で検索
-        if ("ff".equals("ff")) {
+        String memberJudge = this.memberMapper.searchUser(userEmail);
+
+        if (memberJudge.isEmpty()) {
+            System.out.println("error");
             //存在してない場合はエラー
         }
-            //存在してない場合はエラー
-        //削除処理
-            //削除 mapper
-        //例外処理
+
+        // 削除処理
+        String result;
+        try {
+            result = this.memberMapper.deleteUser(userEmail);
+
+        } catch (Exception e) {
+            System.out.println(e);
+            // 例外処理
             //何かしらの予期せぬエラーが発生した場合はエラー
+        }
     }
 
     @Override

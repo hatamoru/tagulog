@@ -2,9 +2,11 @@ package com.example.tagulog.controller;
 
 import com.example.tagulog.Service.MemberService;
 import com.example.tagulog.model.Member;
+import com.example.tagulog.varidation.CheckBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -45,7 +47,6 @@ public class MemberController
     @GetMapping("/get")
     public void getPage(@RequestBody Member member)
     {
-        //ユーザの投稿やコメントの閲覧ができるようにしたい
-        //return JSONで結果を返す
+
     }
 }

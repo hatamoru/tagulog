@@ -1,6 +1,7 @@
 package com.example.tagulog.repository;
 
 import com.example.tagulog.model.Member;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -22,5 +23,9 @@ public interface MemberMapper {
 
     @Select("select password from members where email = #{email}")
     String searchUser(String email);
+
+    @Delete("DELETE from members where email = {email}")
+    String deleteUser(String email);
+
 
 }
