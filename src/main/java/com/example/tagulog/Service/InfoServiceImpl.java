@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
+
 @Service
 @AllArgsConstructor
 public class InfoServiceImpl implements InfoService
@@ -19,6 +21,8 @@ public class InfoServiceImpl implements InfoService
     public void add(Member member)
     {
 
+        // 値判定
+        this.infoMapper.add(member);
     }
 
     /*
@@ -27,6 +31,7 @@ public class InfoServiceImpl implements InfoService
     @Override
     public void delete(Member member)
     {
+        this.infoMapper.delete(member);
 
     }
 
@@ -34,8 +39,9 @@ public class InfoServiceImpl implements InfoService
     店の情報を取得する
      */
     @Override
-    public void get(Member member)
+    public Collection<Member> get()
     {
-
+        Collection<Member> infoMapperAll = this.infoMapper.findAll();
+        return infoMapperAll;
     }
 }

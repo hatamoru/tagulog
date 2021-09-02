@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 public interface MemberService {
 
     //ログイン
-    public void login(Member member);
+    public void login(String email, String password);
 
     //ユーザ追加
     public void add(String name, String password, String email);

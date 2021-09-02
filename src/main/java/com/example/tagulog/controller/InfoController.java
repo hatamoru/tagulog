@@ -16,9 +16,9 @@ public class InfoController
 
     // Todo アノテーション適用
     @GetMapping("/info")
-    public ResponseEntity<Object> getInfo(@RequestBody Member member)
+    public ResponseEntity<Object> getInfo()
     {
-        this.infoService.get(member);
+        this.infoService.get();
 
         ResponseEntity<Object> status = new ResponseEntity<>(HttpStatus.OK);
         return status;

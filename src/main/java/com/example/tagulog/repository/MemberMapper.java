@@ -24,8 +24,11 @@ public interface MemberMapper {
     @Select("select password from members where email = #{email}")
     String searchUser(String email);
 
-    @Delete("DELETE from members where email = {email}")
+    @Delete("DELETE from members where email = #{email}")
     String deleteUser(String email);
+
+    @Select("Select password from members where email = #{email}")
+    String searchPassword(String email);
 
 
 }

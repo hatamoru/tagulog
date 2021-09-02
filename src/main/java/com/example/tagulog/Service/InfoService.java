@@ -3,6 +3,8 @@ package com.example.tagulog.Service;
 import com.example.tagulog.model.Member;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
+
 @Service
 public interface InfoService {
 
@@ -13,6 +15,6 @@ public interface InfoService {
     public void delete(Member member);
 
     //店の情報を取得 (選択式にしてもいいかも)
-    public void get(Member member);
+    public Collection<Member> get();
 
 }

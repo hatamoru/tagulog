@@ -5,4 +5,10 @@ create table members(
             name varchar(30) not null,
             password varchar(100) not null,
             email varchar (30) unique
+
+);
+
+create table info(
+            id int(10) not null auto_increment primary key,
+            link varchar(50)
 );

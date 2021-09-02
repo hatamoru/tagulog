@@ -3,11 +3,9 @@ package com.example.tagulog.Service;
 import com.example.tagulog.model.Member;
 import com.example.tagulog.repository.MemberMapper;
 import lombok.AllArgsConstructor;
-import org.apache.catalina.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.RequestBody;
+
 
 
 
@@ -19,10 +17,12 @@ public class MemberServiceImpl implements MemberService
     private final MemberMapper memberMapper;
 
     @Override
-    public void login(Member member)
+    public void login(String email, String password)
     {
         // login処理を行う
-        // email とpw を引っ張ってきて二つで照合
+        //loadUserByUsername(email);
+
+
         // email pwのどちらかが違う場合　エラー
     }
 
@@ -38,7 +38,7 @@ public class MemberServiceImpl implements MemberService
         }
 
         // 登録処理
-        //必要なパラメータを入力しているか判定 name password email
+        //必要なパラメータを入力しているか判定 name password email　バリデーションでやる
         if (name == null || password == null || email == null){
             System.out.println("error");
         }
